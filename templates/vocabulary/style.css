@@ -1,0 +1,31 @@
+.card {
+    font-family: "Noto Sans JP";
+    font-size: 20px;
+    text-align: center;
+    color: #555753;
+    background-color: #eeeeec;
+}
+
+.word {
+    color: #3F7EBE;
+    font-size: 30px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #d3d7cf;
+}
+
+table {
+    margin: 0 auto;
+}
+
+td {
+    text-align: left;
+    padding-bottom: 15px;
+}
+
+table td + td {
+    padding-left: 30px;
+    color: #808080;
+}
