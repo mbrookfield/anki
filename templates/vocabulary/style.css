@@ -29,3 +29,7 @@ table td + td {
     padding-left: 30px;
     color: #808080;
 }
+
+td:first-child {
+    white-space: nowrap;
+}
