@@ -14,6 +14,7 @@ def main():
     * must contain kanji
     * only have known kanji (data/kanji.txt)
     * does not already exist in anki deck 'Vocabulary'
+    * not in blacklist (data/blacklist.txt)
 
     https://github.com/scriptin/jmdict-simplified
     """
@@ -30,6 +31,8 @@ def main():
     valid = ''.join([chr(i) for i in range(12352, 12543)])
     vocabulary = []
 
+    with open('data/blacklist.txt', 'r') as f:
+        blacklist = f.read().split()
     with open('data/kanji.txt', 'r') as f:
         known = [char for char in f.read()]
     with open('data/jmdict_eng_common.json', 'r') as f:
@@ -43,7 +46,8 @@ def main():
                     if (char not in known) and (char not in valid):
                         readable = False
                 if readable and (kanji['text'] not in existing):
-                    vocabulary.append(kanji['text'])
+                    if kanji['text'] not in blacklist:
+                        vocabulary.append(kanji['text'])
     vocabulary = list(OrderedDict.fromkeys(vocabulary))
 
     print('words found: ' + str(len(vocabulary)))
