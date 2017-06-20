@@ -19,7 +19,7 @@ def main():
     https://github.com/scriptin/jmdict-simplified
     """
 
-    collection_path = '~/.local/share/Anki2/User 1/collection.anki2'
+    collection_path = '~/etc/anki/user/collection.anki2'
     col = Collection(os.path.expanduser(collection_path))
     notes = col.findNotes('deck:Vocabulary')
     existing = []
