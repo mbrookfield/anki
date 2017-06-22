@@ -24,7 +24,7 @@ def main():
             if len(note.fields[0]) > 1:
                 vocabulary.append(note.fields[0])
     col.close()
-    selection = random.choices(vocabulary, k=10)
+    selection = random.sample(vocabulary, k=10)
     print('\n'.join(selection))
 
 
